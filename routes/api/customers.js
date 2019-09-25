@@ -2,15 +2,10 @@
 const router = require("express").Router();
 let customercontroller=require("../../controller/customercontroller")
 
-
-
-
-
 router.route("/")
   .get(customercontroller.findAll)
   .post(customercontroller.create)
   
-
   router.route("/:id")
        .delete(customercontroller.remove)
        .get(customercontroller.findById)

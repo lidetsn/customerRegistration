@@ -25,7 +25,6 @@ module.exports={
       update: function(req, res) {
         db.Customer
           .findOneAndUpdate({ _id: req.params.id }, req.body)
-          //.then(dbModel => console.log(dbModel))
           .then(dbModel => res.json(dbModel))//returns the original data not the modified
           .catch(err => res.status(422).json(err));
       },
